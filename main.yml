@@ -1,0 +1,10 @@
+---
+- name: Create second user
+  hosts: localhost
+  vars:
+          users: [jerry, harsha, salsmon]
+  tasks:
+          - name: create user
+            user:
+                    name: '{{item}}'
+            with_items: '{{users}}' 
